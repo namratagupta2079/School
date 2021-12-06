@@ -1,0 +1,16 @@
+<app-loader [showLoader]="!loaded"></app-loader>
+<div class="app-header">
+  <app-header></app-header>
+</div>
+<div class="app-nav-bar app-tile-padding">
+  <app-navmenu></app-navmenu>
+</div>
+<div class="app-section">
+  <div *ngIf="loaded" class="app-tile-padding">
+    <app-breadcrumb *ngIf="isAuthenticated"></app-breadcrumb>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<div class="app-footer">
+  <app-footer> </app-footer>
+</div>

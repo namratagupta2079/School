@@ -1,0 +1,41 @@
+$breadcrum-font: normal normal normal 12px/19px Titillium Web;
+$breadcrum-bg: #fff;
+$breadcrum-border: 1px solid #f1f1f1;
+$breadcrum-padding: 0px 8px;
+$breadcrum-link-color: #0058B6;
+$breadcrum-link-color-hover: #0275d8;
+$breadcrum-inactive-link-color: #333333;
+
+.breadcrumb {
+  padding: $breadcrum-padding;
+  list-style: none !important;
+  list-style-type: none;
+  background-color: $breadcrum-bg;
+  margin-top: 0px;
+  margin-bottom: 4px;
+}
+.breadcrumb li {
+  display: inline;
+  text-align: left;
+  font: $breadcrum-font;
+  letter-spacing: 0.4px;
+  opacity: 1;
+}
+.breadcrumb li+li:before {
+  padding: 8px;
+  color: $breadcrum-inactive-link-color;
+  content: ">\00a0";
+  font-size: 16px;
+}
+.breadcrumb li a {
+  color: $breadcrum-link-color;
+  text-decoration: none;
+}
+ol.breadcrumb li a:hover {
+  color: $breadcrum-link-color-hover;
+  text-decoration: underline;
+}
+
+.breadcrumb-container {
+  border-bottom: $breadcrum-border;
+}

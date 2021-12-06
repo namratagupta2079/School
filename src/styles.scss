@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web");
+
+@import '~@angular/material/_theming';
+
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$primary: mat-palette($mat-indigo);
+$accent:  mat-palette($mat-indigo);
+// The warn palette is optional (defaults to red).
+$warn:    mat-palette($mat-red);
+
+$theme: mat-light-theme($primary, $accent,$warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($theme);
+
+// SCSS varaible
+
+$font-family: "Titillium Web", Helvetica, Arial, sans-serif;
+$font-size-12: 12px;
+$font-size-14: 14px;
+$font-size-18: 18px;
+$font-size-24: 24px;
+$font-size-36: 36px;
+$font-size-48: 48px;
+
+$body-color: #353535;
+$body-bg-color: #fefefe;
+$body-line-height: 18px;
+
+$mat-border-radius-zero: 0px;
+$mat-button-color:  #594AB2 ;
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: $font-family !important;
+  background: $body-bg-color;
+  color: $body-color;
+  overflow-x: hidden;
+  line-height: $body-line-height;
+  min-height: 100vh;
+}
+
+hr {
+  width: 100%;
+  display: block;
+}
+
+hr.dark {
+  border-top: 1px solid #c5c7c8;
+}
+
+hr.light {
+  border-top: 1px solid #f1f1f1;
+}
+
+.box {
+  display: flex;
+}
+
+.mat-button, .mat-icon-button, .mat-raised-button{
+  border-radius: $mat-border-radius-zero !important;
+  line-height:32px !important;
+  font-family: $font-family !important;
+}
+.mat-raised-button{
+  background-color: $mat-button-color  !important;
+  color:#ffff
+}
+
+table {
+  width: 100%;
+}
+
+.mandatory {
+  color: #f5384d;
+  font-weight: normal;
+}
+
+.mat-form-field.mat-form-field-appearance-outline {
+  margin: 0 0 1.125em 0;
+  // resize the default form field
+  .mat-form-field-infix {
+    padding: 0.4375em 0;
+    border-top-width: 0.5625em;
+    margin-top: -0.187em;
+  }
+  .mat-form-field-label-wrapper {
+    top: -1em;
+    padding-top: 1em;
+  }
+  input.mat-input-element {
+    margin: 0;
+  }
+  .mat-form-field-label {
+    margin-top: -0.7em;
+  }
+  .mat-form-field-flex {
+    padding: 0 0.75em 0 1em;
+    margin-top: -0.25em;
+  }
+  .mat-form-field-subscript-wrapper {
+    margin: 0;
+    padding: 0 0 0 1.33em;
+    font-size: 0.75;
+  }
+
+  &.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.2em) scale(0.75);
+  }
+  .mat-select-arrow-wrapper {
+    transform: none !important;
+  }
+  .mat-form-field-outline {
+    color: #00000098;
+  }
+  //disabled coloring
+  &.mat-form-field-readonly,
+  &.mat-form-field-disabled {
+    .mat-form-field-outline {
+      color: rgba(0, 0, 0, 0.2);
+    }
+    .mat-hint,
+    .mat-hint .mandatory,
+    .mat-form-field-label,
+    .mandatory {
+      color: rgba(0, 0, 0, 0.54);
+    }
+  }
+
+  &.mat-focused {
+    .mat-form-field-outline {
+      color: #594ab2;
+    }
+  }
+  .mat-form-field-wrapper {
+    padding: 0;
+    margin: 0;
+  }
+  // css for too long hints & error messages
+  .mat-form-field-subscript-wrapper {
+    position: static !important;
+    min-height: 1.5em;
+  }
+}

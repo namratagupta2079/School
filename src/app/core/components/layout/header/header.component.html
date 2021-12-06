@@ -1,0 +1,17 @@
+<header>
+  <div *ngIf="isLoggedIn()" class="header-high">
+    Welcome to Customer Bank {{userName}}
+  </div>
+  <div class="be-header-low">
+    <div class="grid-container-low">
+      <div class="grid-item left-align">
+        <a *ngIf="loaded == true" routerLink="/"><img class="fin-logo" src="assets/img/{{ logo }}.gif" /></a>
+      </div>
+      <div class="grid-item right-align">
+        <div *ngIf="isLoggedIn()" class="account">
+          <app-logout></app-logout>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

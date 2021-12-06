@@ -1,0 +1,28 @@
+$fin-landing-margin : 0px;
+$fin-landing-padding-top : 24px;
+$fin-landing-padding-bottom : 8px;
+
+$fin-landing-opacity : 1;
+$fin-landing-border-color :#DDDDDD;
+$fin-landing-border-width : 1px;
+$fin-landing-border-style : solid;
+$fin-landing-opacity : 1;
+
+.landing{
+  margin: $fin-landing-margin;
+  padding-top: $fin-landing-padding-top;
+  padding-bottom: $fin-landing-padding-bottom;
+
+  .leftContent{
+    border: $fin-landing-border-width $fin-landing-border-style $fin-landing-border-color;
+    opacity: $fin-landing-opacity;
+  }
+
+  .rightContent {
+    border: $fin-landing-border-width $fin-landing-border-style $fin-landing-border-color;
+    opacity: $fin-landing-opacity;
+   // background: transparent url('../../../../assets/img/Group_12663.svg') 0% 0% padding-box;
+  }
+}
+
+

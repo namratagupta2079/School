@@ -1,0 +1,182 @@
+{
+  "name": "tsdui",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "start:local": "ng serve -c local",
+    "start:test": "ng serve -c local,test",
+    "start:ci": "serve -s --no-clipboard --listen ${PORT:-4200} ",
+    "build": "ng build",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --ci",
+    "lint": "eslint src --ext .js,.ts,.html",
+    "lint:fix": "npm run lint -- --fix",
+    "e2e": "ng e2e",
+    "e2e:prod": "ng e2e --headless --prod",
+    "e2e:parallel": "npx cy2 run --record --key gitlab-ci --parallel --ci-build-id 1",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^11.1.1",
+    "@angular/cdk": "^11.2.13",
+    "@angular/common": "^11.2.10",
+    "@angular/compiler": "^11.2.10",
+    "@angular/core": "^11.2.10",
+    "@angular/flex-layout": "^11.0.0-beta.33",
+    "@angular/forms": "^11.2.10",
+    "@angular/localize": "^11.2.10",
+    "@angular/material": "^11.0.4",
+    "@angular/material-moment-adapter": "^11.0.4",
+    "@angular/platform-browser": "^11.2.10",
+    "@angular/platform-browser-dynamic": "^11.2.10",
+    "@angular/router": "^11.2.10",
+    "@mat-datetimepicker/core": "^6.0.2",
+    "@ngrx/effects": "^11.1.1",
+    "@ngrx/entity": "^11.1.1",
+    "@ngrx/router-store": "^11.1.1",
+    "@ngrx/store": "^11.1.1",
+    "@ngrx/store-devtools": "^11.1.1",
+    "@ngx-translate/core": "^13.0.0",
+    "@ngx-translate/http-loader": "^4.0.0",
+    "cypress-get-table": "^1.0.1",
+    "faker": "^4.1.0",
+    "font-awesome": "^4.7.0",
+    "moment": "^2.29.1",
+    "ngrx-forms": "^6.3.4",
+    "ngrx-store-localstorage": "^11.0.0",
+    "ngx-infinite-scroll": "^10.0.1",
+    "ngx-material-timepicker": "^5.5.3",
+    "normalize.css": "^8.0.1",
+    "path-browserify": "^1.0.1",
+    "rxjs": "^6.6.3",
+    "tsify": "^5.0.2",
+    "tslib": "^2.2.0",
+    "yargs-parser": "^18.1.3",
+    "zone.js": "~0.10.2"
+  },
+  "devDependencies": {
+    "@angular-builders/jest": "^9.0.1",
+    "@angular-devkit/architect": "^0.1102.9",
+    "@angular-devkit/build-angular": "^0.1102.9",
+    "@angular-eslint/builder": "^4.0.0",
+    "@angular-eslint/eslint-plugin": "^4.0.0",
+    "@angular-eslint/eslint-plugin-template": "^4.0.0",
+    "@angular-eslint/schematics": "4.0.0",
+    "@angular-eslint/template-parser": "^4.0.0",
+    "@angular/cli": "^11.0.7",
+    "@angular/compiler-cli": "^11.2.10",
+    "@angular/language-service": "~9.0.2",
+    "@cypress/browserify-preprocessor": "^3.0.1",
+    "@ngrx/schematics": "^10.1.2",
+    "@nrwl/cypress": "^12.4.0",
+    "@types/chai": "^4.2.15",
+    "@types/chai-as-promised": "^7.1.3",
+    "@types/cypress-cucumber-preprocessor": "^4.0.0",
+    "@types/faker": "^5.1.7",
+    "@types/jest": "^25.2.3",
+    "@types/node": "^12.19.14",
+    "@typescript-eslint/eslint-plugin": "4.16.1",
+    "@typescript-eslint/parser": "4.16.1",
+    "axe-core": "^4.2.3",
+    "chai": "^4.3.0",
+    "chai-as-promised": "^7.1.1",
+    "cucumber": "^6.0.5",
+    "cy2": "^1.2.1",
+    "cypress": "7.6.0",
+    "cypress-axe-core": "^1.1.3",
+    "cypress-cucumber-preprocessor": "^4.1.2",
+    "cypress-fail-on-console-error": "^2.1.0",
+    "cypress-multi-reporters": "^1.4.0",
+    "cypress-pipe": "^2.0.0",
+    "cypress-terminal-report": "^3.2.2",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsdoc": "30.7.6",
+    "eslint-plugin-prefer-arrow": "1.2.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-sonarjs": "^0.6.0",
+    "glob": "^7.1.6",
+    "husky": "^4.3.8",
+    "jasmine-marbles": "^0.8.1",
+    "jest": "^26.6.3",
+    "jest-fail-on-console": "^2.0.4",
+    "jest-junit": "^12.0.0",
+    "jest-preset-angular": "8.4.0",
+    "jest-sonar-reporter": "^2.0.0",
+    "lint-staged": "^10.5.4",
+    "mocha": "^8.3.2",
+    "mocha-junit-reporter": "^2.0.0",
+    "mochawesome": "^6.2.2",
+    "multiple-cucumber-html-reporter": "^1.18.0",
+    "ng-cache-testing-module": "^1.1.3",
+    "prettier": "2.2.1",
+    "serve": "^11.3.2",
+    "source-map": "^0.6.1",
+    "ts-jest": "^26.5.4",
+    "ts-node": "~8.3.0",
+    "typescript": "^4.0.5"
+  },
+  "jestSonar": {
+    "reportPath": "output/coverage/jest",
+    "reportFile": "test-report.xml"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "testEnvironment": "jsdom",
+    "resetMocks": false,
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupJest.ts",
+      "jest-localstorage-mock"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/dist/",
+      "<rootDir>/src/test.ts"
+    ],
+    "moduleNameMapper": {
+      "@/(.*)": "<rootDir>/src/$1",
+      "@core/(.*)": "<rootDir>/src/app/core/$1",
+      "@material/(.*)": "<rootDir>/src/app/material/$1",
+      "@features/(.*)": "<rootDir>/src/app/features/$1",
+      "@testing/(.*)": "<rootDir>/src/testing/$1",
+      "@shared/(.*)": "<rootDir>/src/app/shared/$1",
+      "@environments/(.*)": "<rootDir>/src/environments/$1"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "<rootDir>/tsconfig.spec.json",
+        "stringifyContentPathRegex": "\\.html$",
+        "astTransformers": [
+          "<rootDir>/node_modules/jest-preset-angular/InlineHtmlStripStylesTransformer"
+        ]
+      }
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,html}": "eslint --cache --fix"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "./e2e/features/",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "output/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "jest-junit": {
+    "outputDirectory": "output",
+    "outputName": "junit.xml"
+  }
+}

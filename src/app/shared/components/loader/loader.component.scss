@@ -1,0 +1,38 @@
+.loader img {
+  max-height: 75px;
+}
+
+.center {
+  font-size: 200%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translateY(-50%, -50%);
+}
+
+@media (max-width: 759.98px) {
+  .center {
+    top: 65% !important;
+  }
+}
+@media (max-height: 559.98px) {
+  .center {
+    top: 70% !important;
+  }
+}
+
+@media (max-height: 420.98px) {
+  .center {
+    top: 75% !important;
+  }
+}
+
+@media (max-height: 200.98px) {
+  .center {
+    top: 85% !important;
+  }
+}
+

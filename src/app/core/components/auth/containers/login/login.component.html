@@ -1,0 +1,7 @@
+<div class=loginPage>
+  <app-login-page
+    (submitted)="onSubmit($event)"
+    [loading]="loading$ | async"
+    [error]="error$ | async"
+  ></app-login-page>
+  </div>

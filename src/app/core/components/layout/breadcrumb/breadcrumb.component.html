@@ -1,0 +1,10 @@
+<nav *ngIf="breadCrumItems.length > 0" class="breadcrumb-container">
+  <ul class="breadcrumb">
+    <li *ngFor="let breadcrumb of breadCrumItems" class="breadcrumb-item">
+      <a *ngIf=!breadcrumb.terminalOnly routerLink="{{breadcrumb.url}}">
+        {{ breadcrumb.label }}
+      </a>
+      <span *ngIf=breadcrumb.terminalOnly>{{ breadcrumb.label }}</span>
+    </li>
+  </ul>
+</nav>

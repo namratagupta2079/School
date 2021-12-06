@@ -1,0 +1,44 @@
+$min-width : fit-content;
+$padding : 48px;
+$max-width : 100%;
+
+.app-header {
+  max-width: $max-width;
+  min-width: $min-width;
+  max-height: $min-width;
+  min-height: 117px;
+}
+
+.app-nav-bar {
+  max-width: $max-width;
+  max-height: $min-width;
+  min-height: 46px;
+}
+
+.app-section {
+  min-height: 721px;
+}
+.app-footer {
+  max-width: $max-width;
+  min-width: $min-width;
+  max-height: $min-width;
+}
+
+.app-tile-padding{
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+@media (max-width: 839.98px) {
+  .app-tile-padding{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 599.98px) {
+  .app-tile-padding{
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}

@@ -1,0 +1,151 @@
+<div [formGroup]="form" fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="center none" class="border">
+  <div fxLayout="row" fxLayoutGap="60px">
+    <label>Transaction Type</label>
+    <mat-radio-group formControlName="typeOfCustomer">
+      <mat-radio-button value="New">
+        New
+      </mat-radio-button>
+      <mat-radio-button value="Existing">
+        Existing
+      </mat-radio-button>
+    </mat-radio-group>
+    <mat-error *ngIf="form.controls.typeOfCustomer.hasError('required')">
+      Please choose transaction type.
+    </mat-error>
+  </div>
+  <div fxLayout="row" fxLayoutGap="60px">
+    <label>Customer Number</label>
+    <mat-form-field appearance="outline">
+      <mat-label>Customer Number<span class="mandatory">*</span></mat-label>
+      <input matInput type="text" maxlength="17" formControlName="customerNumber"
+        (ngModelChange)="customerData($event)" />
+      <mat-error *ngIf="form.controls.customerNumber.hasError('required')">
+        Please enter valid Customer Number.
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row" fxLayoutGap="75px">
+    <label>Customer Name</label>
+    <mat-form-field appearance="outline">
+      <mat-label>Customer Name<span class="mandatory">*</span></mat-label>
+      <input matInput type="text" maxlength="17" formControlName="customerName" />
+      <mat-error *ngIf="form.controls.customerName.hasError('required')">
+        Please enter valid Customer Name.
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row" fxLayoutGap="60px">
+    <label>Customer Address</label>
+    <mat-form-field appearance="outline">
+      <mat-label>Customer Address<span class="mandatory">*</span></mat-label>
+      <input matInput type="text" maxlength="17" formControlName="customerAddress" />
+      <mat-error *ngIf="form.controls.customerAddress.hasError('required')">
+        Please enter valid Customer Address.
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row" fxLayoutGap="70px">
+    <label>Customer Phone</label>
+    <mat-form-field appearance="outline">
+      <mat-label>Customer Phone<span class="mandatory">*</span></mat-label>
+      <input matInput type="text" maxlength="17" formControlName="customerPhone" />
+      <mat-error *ngIf="form.controls.customerPhone.hasError('required')">
+        Please enter valid Customer Phone.
+      </mat-error>
+      <mat-error *ngIf="form.controls.customerPhone.hasError('pattern')">
+        Please enter numbers only.
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row" fxLayoutGap="125px">
+    <label>Amount</label>
+    <mat-form-field appearance="outline">
+      <mat-label>Amount<span class="mandatory">*</span></mat-label>
+      <input matInput type="text" maxlength="17" formControlName="amount" />
+      <mat-error *ngIf="form.controls.amount.hasError('required')">
+        Please enter valid Amount.
+      </mat-error>
+      <mat-error *ngIf="form.controls.customerPhone.hasError('pattern')">
+        Please enter numbers only.
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row" fxLayoutGap="125px">
+    <label>Currency</label>
+    <mat-form-field appearance="outline">
+      <mat-label>Currency<span class="mandatory">*</span></mat-label>
+      <mat-select formControlName="currency">
+        <mat-option *ngFor="let option of currencyList" [value]="option">{{ option }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.controls.currency.hasError('required')">
+        Please enter valid Currency.
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row" fxLayoutGap="70px">
+    <label>Beneficiary Bank</label>
+    <mat-form-field appearance="outline">
+      <mat-label>Beneficiary Bank<span class="mandatory">*</span></mat-label>
+      <input matInput type="text" maxlength="17" formControlName="beneficiaryBank" />
+      <mat-error *ngIf="form.controls.beneficiaryBank.hasError('required')">
+        Please enter valid Beneficiary Bank.
+      </mat-error>
+      <mat-error *ngIf="form.controls.customerPhone.hasError('pattern')">
+        Please enter alphabets only.
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row" fxLayoutGap="70px">
+    <label>Account Number</label>
+    <mat-form-field appearance="outline">
+      <mat-label>Account Number<span class="mandatory">*</span></mat-label>
+      <input matInput type="text" maxlength="17" formControlName="beneficiaryAccountNumber" />
+      <mat-error *ngIf="form.controls.beneficiaryAccountNumber.hasError('required')">
+        Please enter valid Account Number.
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row" fxLayoutGap="70px">
+    <label>Payment Details</label>
+    <mat-form-field appearance="outline">
+      <mat-label>Payment Details<span class="mandatory">*</span></mat-label>
+      <input matInput type="text" maxlength="17" formControlName="paymentDetails" />
+      <mat-error *ngIf="form.controls.paymentDetails.hasError('required')">
+        Please enter valid Payment Details.
+      </mat-error>
+      <mat-error *ngIf="form.controls.customerPhone.hasError('pattern')">
+        Please enter alphabets only.
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row" fxLayoutGap="100px">
+    <label>Card Details</label>
+    <mat-form-field appearance="outline">
+      <mat-label>Card Details<span class="mandatory">*</span></mat-label>
+      <input matInput type="text" maxlength="17" formControlName="cardDetails" />
+      <mat-error *ngIf="form.controls.cardDetails.hasError('required')">
+        Please enter valid Card Details.
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row" fxLayoutGap="130px">
+    <label>Region</label>
+    <mat-form-field appearance="outline">
+      <mat-label>Region<span class="mandatory">*</span></mat-label>
+      <mat-select formControlName="region">
+        <mat-option *ngFor="let option of regionList" [value]="option">{{ option }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.controls.region.hasError('required')">
+        Please enter valid region.
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-button class="btn-submit" (click)="submit()">
+      <mat-icon> save_alt </mat-icon>
+      Submit
+    </button>
+  </div>
+</div>
