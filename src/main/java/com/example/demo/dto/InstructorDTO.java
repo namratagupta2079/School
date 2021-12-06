@@ -10,6 +10,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * @author namratagupta
+ *
+ *         DTO class for Instructor
+ */
 @Getter
 @Setter
 @NoArgsConstructor

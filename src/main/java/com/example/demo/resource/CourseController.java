@@ -30,6 +30,11 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * @author namratagupta
+ *
+ *         This is controller class for Course resource
+ */
 @RestController
 @RequestMapping(value = "/course")
 @RequiredArgsConstructor
@@ -38,6 +43,12 @@ public class CourseController {
 	@Autowired
 	private CourseService service;
 
+	/**
+	 * This method is used to create course resource in database
+	 * 
+	 * @param dto
+	 * @return Course
+	 */
 	@PostMapping(consumes = "application/json")
 	@ApiOperation(value = "This API is used to create Course resource", response = Course.class)
 	public ResponseEntity<Course> createCourse(@Valid @NotNull @RequestBody CourseDTO dto) {
@@ -50,6 +61,13 @@ public class CourseController {
 		}
 	}
 
+	/**
+	 * This method is used to fetch the course as per the provided id else it will
+	 * fetch all the courses.
+	 * 
+	 * @param id
+	 * @return Course
+	 */
 	@GetMapping(produces = "application/json")
 	@ApiOperation(value = "This API is used to get all Courses or Course by id", response = Course.class)
 	@ApiResponses(value = { @ApiResponse(code = 500, message = "Server error"),
@@ -78,6 +96,13 @@ public class CourseController {
 		}
 	}
 
+	/**
+	 * This method will update the existing course resource.
+	 * 
+	 * @param id
+	 * @param courseDto
+	 * @return
+	 */
 	@PutMapping("/{id}")
 	@ApiOperation(value = "This API is used to update Course", response = Course.class)
 	public ResponseEntity<Course> updateCourse(@NotNull @PathVariable("id") Integer id,
@@ -91,6 +116,13 @@ public class CourseController {
 		}
 	}
 
+	/**
+	 * This method will delete the course resource as per the id provided in path
+	 * parameter
+	 * 
+	 * @param id
+	 * @return
+	 */
 	@DeleteMapping("/{id}")
 	@ApiOperation(value = "This API is used to delete Course")
 	public ResponseEntity<HttpStatus> deleteCourse(@NotNull @PathVariable("id") Integer id) {
@@ -102,6 +134,13 @@ public class CourseController {
 		}
 	}
 
+	/**
+	 * This method will fetch all the courses as per the student id provided in path
+	 * parameter
+	 * 
+	 * @param id
+	 * @return
+	 */
 	@GetMapping("/studentId/{id}")
 	@ApiOperation(value = "This API is used to get all Courses for a particular student", response = Course.class)
 	@ApiResponses(value = { @ApiResponse(code = 500, message = "Server error"),

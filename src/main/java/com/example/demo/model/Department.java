@@ -12,6 +12,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * @author namratagupta
+ *
+ *         Entity class for Department
+ */
 @Getter
 @Setter
 @ToString(callSuper = true)
@@ -21,12 +26,12 @@ import lombok.ToString;
 @Entity
 @Table(name = "DEPARTMENT")
 public class Department {
-	
-	@Id
-    @Column(name="name")
-    private String name;
 
-    @Column(name = "location")
-    private String location;
+	@Id
+	@Column(name = "name")
+	private String name;
+
+	@Column(name = "location")
+	private String location;
 
 }

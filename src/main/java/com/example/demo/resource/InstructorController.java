@@ -29,6 +29,11 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * @author namratagupta
+ *
+ *         This is controller class for Instructor resource
+ */
 @RestController
 @RequestMapping(value = "/instructor")
 @RequiredArgsConstructor
@@ -37,6 +42,12 @@ public class InstructorController {
 	@Autowired
 	private InstructorService service;
 
+	/**
+	 * This method is used to create Instructor resource in database
+	 * 
+	 * @param dto
+	 * @return Instructor
+	 */
 	@PostMapping(consumes = "application/json")
 	@ApiOperation(value = "This API is used to create Instructor resource", response = Instructor.class)
 	public ResponseEntity<Instructor> createInstructor(@Valid @NotNull @RequestBody InstructorDTO dto) {
@@ -49,6 +60,13 @@ public class InstructorController {
 		}
 	}
 
+	/**
+	 * This method is used to fetch the Instructor as per the provided id else it
+	 * will fetch all the Instructors.
+	 * 
+	 * @param id
+	 * @return List<Instructor>
+	 */
 	@GetMapping(produces = "application/json")
 	@ApiOperation(value = "This API is used to get all instructors or instructor by id", response = Instructor.class)
 	@ApiResponses(value = { @ApiResponse(code = 500, message = "Server error"),
@@ -77,6 +95,13 @@ public class InstructorController {
 		}
 	}
 
+	/**
+	 * This method will update the existing Instructor resource.
+	 * 
+	 * @param id
+	 * @param instructorDto
+	 * @return Instructor
+	 */
 	@PutMapping("/{id}")
 	@ApiOperation(value = "This API is used to update Instructor", response = Instructor.class)
 	public ResponseEntity<Instructor> updateInstructor(@NotNull @PathVariable("id") Integer id,
@@ -90,6 +115,13 @@ public class InstructorController {
 		}
 	}
 
+	/**
+	 * This method will delete the Instructor resource as per the id provided in
+	 * path parameter
+	 * 
+	 * @param id
+	 * @return
+	 */
 	@DeleteMapping("/{id}")
 	@ApiOperation(value = "This API is used to delete Instructor")
 	public ResponseEntity<HttpStatus> deleteInstructor(@NotNull @PathVariable("id") Integer id) {

@@ -17,10 +17,23 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.swagger.annotations.ApiOperation;
 
+/**
+ * @author namratagupta
+ *
+ *         This is controller class for User resource
+ */
 @RestController
 @RequestMapping(value = "/user", produces = "application/json")
 public class UserController {
 
+	/**
+	 * This method will authenticate the user with the provided credentials and
+	 * return the JWT token.
+	 * 
+	 * @param username
+	 * @param password
+	 * @return User
+	 */
 	@ApiOperation(value = "This API is used to generate token based on user login detail")
 	@PostMapping("/login")
 	public User login(@RequestParam("user") String username, @RequestParam("password") String password) {
@@ -33,6 +46,13 @@ public class UserController {
 
 	}
 
+	/**
+	 * This method is used to generate the JWT token using Signature Algorithm and
+	 * secret key. It includes the expiration time.
+	 * 
+	 * @param username
+	 * @return token
+	 */
 	private String getJWTToken(String username) {
 		String secretKey = "mySecretKey";
 		List<GrantedAuthority> grantedAuthorities = AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER");

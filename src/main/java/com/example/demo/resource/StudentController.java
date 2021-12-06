@@ -31,6 +31,11 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * @author namratagupta
+ *
+ *         This is controller class for Student resource
+ */
 @RestController
 @RequestMapping(value = "/student")
 @RequiredArgsConstructor

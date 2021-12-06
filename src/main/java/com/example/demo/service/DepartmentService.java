@@ -14,6 +14,10 @@ import com.example.demo.repositories.DepartmentRepoitory;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+/**
+ * @author namratagupta
+ *
+ */
 @Service
 @AllArgsConstructor
 @NoArgsConstructor

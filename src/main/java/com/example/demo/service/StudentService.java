@@ -17,6 +17,10 @@ import com.example.demo.repositories.StudentRepository;
 
 import lombok.RequiredArgsConstructor;
 
+/**
+ * @author namratagupta
+ *
+ */
 @Service
 @RequiredArgsConstructor
 public class StudentService {

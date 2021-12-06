@@ -8,6 +8,11 @@ import org.springframework.data.repository.query.Param;
 
 import com.example.demo.model.Student;
 
+/**
+ * @author namratagupta
+ *
+ *         Repository for Student
+ */
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
 	@Query(value = "select st.* from student st inner join course_student cb on st.student_id = cb.student_id "

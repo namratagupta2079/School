@@ -29,6 +29,11 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * @author namratagupta
+ *
+ *         This is controller class for Department resource
+ */
 @RestController
 @RequestMapping(value = "/department")
 @RequiredArgsConstructor
@@ -37,6 +42,12 @@ public class DepartmentController {
 	@Autowired
 	private DepartmentService service;
 
+	/**
+	 * This method is used to create Department resource in database
+	 * 
+	 * @param dto
+	 * @return Department
+	 */
 	@PostMapping(consumes = "application/json")
 	@ApiOperation(value = "This API is used to create Department resource", response = Department.class)
 	public ResponseEntity<Department> createDepartment(@Valid @NotNull @RequestBody DepartmentDTO dto) {
@@ -49,6 +60,13 @@ public class DepartmentController {
 		}
 	}
 
+	/**
+	 * This method is used to fetch the Department as per the provided id else it
+	 * will fetch all the Departments.
+	 * 
+	 * @param name
+	 * @return Department
+	 */
 	@GetMapping(produces = "application/json")
 	@ApiOperation(value = "This API is used to get all department or department by id", response = Department.class)
 	@ApiResponses(value = { @ApiResponse(code = 500, message = "Server error"),
@@ -77,6 +95,13 @@ public class DepartmentController {
 		}
 	}
 
+	/**
+	 * This method will update the existing Department resource.
+	 * 
+	 * @param name
+	 * @param departmentDto
+	 * @return Department
+	 */
 	@PutMapping("/{name}")
 	@ApiOperation(value = "This API is used to update department", response = Department.class)
 	public ResponseEntity<Department> updateDepartment(@NotNull @PathVariable("id") String name,
@@ -90,6 +115,13 @@ public class DepartmentController {
 		}
 	}
 
+	/**
+	 * This method will delete the department resource as per the id provided in
+	 * path parameter
+	 * 
+	 * @param name
+	 * @return Department
+	 */
 	@DeleteMapping("/{name}")
 	@ApiOperation(value = "This API is used to delete department")
 	public ResponseEntity<HttpStatus> deleteDepartment(@NotNull @PathVariable("id") String name) {

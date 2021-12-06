@@ -10,6 +10,14 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.example.demo.security.JWTAuthorizationFilter;
 
+/**
+ * @author namratagupta
+ *
+ *         This is configuration class for api security layer.It allows us to
+ *         specify the access configuration to published resources. In this
+ *         case, all calls to the controller /user are allowed, but all other
+ *         calls require authentication.
+ */
 @EnableWebSecurity
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {

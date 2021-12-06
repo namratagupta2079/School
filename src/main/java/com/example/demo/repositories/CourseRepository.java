@@ -8,6 +8,11 @@ import org.springframework.data.repository.query.Param;
 
 import com.example.demo.model.Course;
 
+/**
+ * @author namratagupta
+ *
+ *         Repository for course
+ */
 public interface CourseRepository extends JpaRepository<Course, Long> {
 
 	@Query(value = "select cors.* from Course cors inner join Course_Student cs on cors.course_id = cs.course_id "

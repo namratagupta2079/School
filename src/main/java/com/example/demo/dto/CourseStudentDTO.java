@@ -6,6 +6,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * @author namratagupta
+ *
+ *         DTO class for CourseStudent
+ */
 @Getter
 @Setter
 @NoArgsConstructor

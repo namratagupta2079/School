@@ -20,12 +20,22 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.UnsupportedJwtException;
 
+/**
+ * @author namratagupta
+ *
+ *         This class is capable of intercepting invocations to protected
+ *         resources to recover the token and determine if the client has
+ *         permissions or not.
+ */
 public class JWTAuthorizationFilter extends OncePerRequestFilter {
 
 	private final String HEADER = "Authorization";
 	private final String PREFIX = "Bearer ";
 	private final String SECRET = "mySecretKey";
 
+	/**
+	 * Intercepts the all the request
+	 */
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 			throws ServletException, IOException {
@@ -48,13 +58,20 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
 		}
 	}
 
+	/**
+	 * If token exists, This method will decrypts the token and validate it.
+	 * 
+	 * @param request
+	 * @return
+	 */
 	private Claims validateToken(HttpServletRequest request) {
 		String jwtToken = request.getHeader(HEADER).replace(PREFIX, "");
 		return Jwts.parser().setSigningKey(SECRET.getBytes()).parseClaimsJws(jwtToken).getBody();
 	}
 
 	/**
-	 * Authentication method in Spring flow
+	 * If token is valid, this method adds the necessary configuration to the Spring
+	 * context to authorize the request
 	 * 
 	 * @param claims
 	 */
@@ -68,6 +85,13 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
 
 	}
 
+	/**
+	 * Checks the existence of the token
+	 * 
+	 * @param request
+	 * @param res
+	 * @return boolean
+	 */
 	private boolean checkJWTToken(HttpServletRequest request, HttpServletResponse res) {
 		String authenticationHeader = request.getHeader(HEADER);
 		if (authenticationHeader == null || !authenticationHeader.startsWith(PREFIX))
