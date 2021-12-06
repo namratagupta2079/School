@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "eogw-ui": {
+    "bank-ui": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/eogw-ui",
+            "outputPath": "dist/bank-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,19 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "eogw-ui:build"
-
+            "browserTarget": "bank-ui:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "eogw-ui:build:production"
+              "browserTarget": "bank-ui:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "eogw-ui:build"
+            "browserTarget": "bank-ui:build"
           }
         },
         "test": {
@@ -104,18 +103,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "eogw-ui:serve"
+            "devServerTarget": "bank-ui:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "eogw-ui:serve:production"
+              "devServerTarget": "bank-ui:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "eogw-ui",
+  "defaultProject": "bank-ui",
   "cli": {
     "analytics": false,
     "defaultCollection": "@ngrx/schematics"
